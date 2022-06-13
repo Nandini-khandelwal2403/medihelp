@@ -26,3 +26,19 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
 }
+
+function myFunction() {
+    const dots = document.querySelector('.dots');
+    const more = document.querySelector('.more');
+    const mybtn = document.getElementById('mybtn');
+
+    if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        mybtn.innerHTML = "Read more";
+        more.style.display = "none";
+    } else {
+        dots.style.display = "none";
+        mybtn.innerHTML = "Read less";
+        more.style.display = "inline";
+    }
+}

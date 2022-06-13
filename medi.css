@@ -263,3 +263,77 @@
         opacity: 1
     }
 }
+
+/* left pane css */
+.compPane {
+    padding: 15px;
+    background-color: rgb(223, 244, 255);
+    width: 25%;
+    height: 500px;
+}
+
+.content {
+
+    font-size: 20px;
+    /* margin: 5px; */
+    padding-left: 15px;
+    /* text-align: center; */
+}
+
+.containAllMedi {
+    overflow-y: scroll;
+    height: 465px;
+}
+
+.content:hover {
+    background-color: rgb(174, 244, 174);
+}
+
+.content:active {
+    background-color: rgb(80, 214, 80);
+}
+
+.more {
+    display: none;
+}
+
+.dots {
+    display: none;
+}
+
+.midPane {
+    margin: 40px 20px;
+    width: 50%;
+    background-color: #2196F3;
+}
+
+.rightPane {
+    background-color: brown;
+    width: 20%;
+}
+
+.threePane {
+    display: flex;
+}
+
+.medName {
+    padding: 15px 15px;
+}
+
+.medContent {
+    padding: 0px 15px;
+}
+
+#mybtn {
+    margin: 15px 15px;
+    height: 25px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#mybtn:hover {
+    cursor: pointer;
+    background-color: rgb(237, 237, 183);
+}
