@@ -264,12 +264,19 @@
     }
 }
 
+
+.test{
+
+}
 /* left pane css */
 .compPane {
     padding: 15px;
     background-color: rgb(223, 244, 255);
     width: 25%;
     height: 500px;
+    margin-right:0px;
+    float:left;
+
 }
 
 .content {
@@ -282,7 +289,7 @@
 
 .containAllMedi {
     overflow-y: scroll;
-    height: 465px;
+    height: 400px;
 }
 
 .content:hover {
@@ -302,18 +309,35 @@
 }
 
 .midPane {
-    margin: 40px 20px;
+    margin-top: 40px ;
+    margin-bottom:40px;
+    margin-left:0px;
     width: 50%;
     background-color: #2196F3;
+    float:left;
+    display: flex;
+}
+.block1 {
+    width:200px;
+    height: 265px;
+    background-color:palevioletred;
+    margin-left:20px
+}
+.block11{
+    float:left;
 }
 
 .rightPane {
     background-color: brown;
-    width: 20%;
+    width: 25%;
+    float:right;
+    padding:20px;
 }
 
+
 .threePane {
-    display: flex;
+    /* display: flex; */
+    /* width: */
 }
 
 .medName {

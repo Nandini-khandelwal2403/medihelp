@@ -27,11 +27,13 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 }
 
-function myFunction() {
+function myFunction(i) {
     const dots = document.querySelector('.dots');
     const more = document.querySelector('.more');
-    const mybtn = document.getElementById('mybtn');
-
+    const mybtn = document.getElementsById("mybtn1");
+    const mybtn2 = document.getElementsById("mybtn2");
+    const mybtn3 = document.getElementsById("mybtn3");
+    console.log(mybtn);
     if (dots.style.display === "none") {
         dots.style.display = "inline";
         mybtn.innerHTML = "Read more";
