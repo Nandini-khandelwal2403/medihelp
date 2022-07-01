@@ -1,3 +1,6 @@
+const mongoose = require('mongoose');
+// connection creation and creating new database
+mongoose.connect('mongodb+srv://root:<123>@cluster0.cnmxtyv.mongodb.net/?retryWrites=true&w=majority',{useNewUrlParser:true, useUnifiedTopology: true,useFindAndModify: false,userCreateIndex: true}).then(() => console.log("connection successfull....")).catch((err)=> console.log(err));
 const express = require('express');
 const app = express();
 
