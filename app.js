@@ -6,10 +6,11 @@ const connectDB = require('./src/db/connection');
 // connection with Database
 connectDB();
 
-const Seller = require("./src/db/seller")
+const { Seller, Login } = require("./src/db/seller")
 
 // body parser lines
 var bodyParser = require('body-parser');
+// const { Login } = require('./src/db/seller');
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
@@ -27,10 +28,23 @@ app.post('/api/new', (req, res) => {
         res.json(doc);
     })
 })
+app.post('/user/login', (req, res) => {
+    let obj = req.body;
+    console.log(obj);
 
+    const login = new Login(obj);
+    login.save().then((log) => {
+        res.json(log);
+    })
+})
 app.get('/form', (req, res) => {
     res.sendFile(__dirname + '/public/views/form.html')
 })
+
+app.get('/login', (req, res) => {
+    res.sendFile(__dirname + '/public/views/login.html')
+})
+
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/views/index.html')
