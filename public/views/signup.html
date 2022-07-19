@@ -138,19 +138,19 @@
 
  <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
+  <form class="modal-content" onsubmit="return false">
    <div class="container">
     <h1>Sign Up</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <input type="text" class="email" placeholder="Enter Email" name="email" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" class="password"placeholder="Enter Password" name="psw" required>
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+    <input type="password" class="repeat_password"placeholder="Repeat Password" name="psw-repeat" required>
 
     <label>
      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -161,12 +161,13 @@
     <div class="clearfix">
      <button type="button" onclick="document.getElementById('id01').style.display='none'"
       class="cancelbtn">Cancel</button>
-     <button type="submit" class="signupbtn">Sign Up</button>
+     <button type="submit" class="signupbtn" onclick="signup()">Sign Up</button>
     </div>
    </div>
   </form>
  </div>
 
+ <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
  <script>
   // Get the modal
   var modal = document.getElementById('id01');
@@ -177,6 +178,21 @@
     modal.style.display = "none";
    }
   }
+
+  function signup() {
+    const email = document.querySelector(".email").value;
+    const password = document.querySelector(".password").value;
+    const repeat_password = document.querySelector(".repeat_password").value;
+
+    let obj = { 'email': email, 'password': password, 'repeat_password':repeat_password };
+    axios({
+     method: "post",
+     url: location.protocol + "//" + location.host + '/user/signup',
+     data: obj
+    }).then((res) => {
+     console.log(res);
+    })
+   }
  </script>
 
 </body>

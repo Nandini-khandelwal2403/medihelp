@@ -6,7 +6,7 @@ const connectDB = require('./src/db/connection');
 // connection with Database
 connectDB();
 
-const { Seller, Login } = require("./src/db/seller")
+const { Seller, Login, Signup} = require("./src/db/seller")
 
 // body parser lines
 var bodyParser = require('body-parser');
@@ -37,12 +37,26 @@ app.post('/user/login', (req, res) => {
         res.json(log);
     })
 })
+
+app.post('/user/signup', (req, res) => {
+    let obj = req.body;
+    console.log(obj);
+
+    const signup = new Signup(obj);
+    signup.save().then((log) => {
+        res.json(log);
+    })
+})
 app.get('/form', (req, res) => {
     res.sendFile(__dirname + '/public/views/form.html')
 })
 
 app.get('/login', (req, res) => {
     res.sendFile(__dirname + '/public/views/login.html')
+})
+
+app.get('/signup', (req, res) => {
+    res.sendFile(__dirname + '/public/views/signup.html')
 })
 
 

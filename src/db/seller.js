@@ -32,8 +32,21 @@ const loginSchema = new mongoose.Schema({
         type: String
     }
 })
+
+const signupSchema = new mongoose.Schema({
+    email: {
+        type: String
+    },
+    password: {
+        type: String
+    },
+    repeat_password:{
+        type: String
+    }
+})
 module.exports = {
     Seller: mongoose.model("seller", sellerSchema),
-    Login: mongoose.model("login", loginSchema)
+    Login: mongoose.model("login", loginSchema),
+    Signup: mongoose.model("signup", signupSchema)
 }
 // module.exports = {Seller, Login} = {}
